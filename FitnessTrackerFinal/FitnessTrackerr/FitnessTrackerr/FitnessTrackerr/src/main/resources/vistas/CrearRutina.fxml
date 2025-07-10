@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.lang.String?>
+
+<VBox spacing="15"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.fitnesstracker.app.CrearRutinaController"
+      stylesheets="@estilos.css">
+
+
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <Label text="Crear Nueva Rutina" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10">
+        <Label text="Fecha:"/>
+        <DatePicker fx:id="datePickerFecha"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Ejercicio:"/>
+        <TextField fx:id="txtEjercicio" promptText="Nombre del ejercicio" prefWidth="200"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Grupo muscular:"/>
+        <ComboBox fx:id="comboGrupoMuscular" prefWidth="150">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Piernas"/>
+                    <String fx:value="Espalda"/>
+                    <String fx:value="Brazos"/>
+                    <String fx:value="Pecho"/>
+                    <String fx:value="Hombros"/>
+                    <String fx:value="Abdomen"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Series:"/>
+        <TextField fx:id="txtSeries" promptText="N° series" prefWidth="80"/>
+        <Label text="Repeticiones:"/>
+        <TextField fx:id="txtRepeticiones" promptText="N° repeticiones" prefWidth="80"/>
+        <Button text="Agregar ejercicio" onAction="#agregarEjercicio"/>
+    </HBox>
+
+    <TableView fx:id="tablaEjercicios" prefHeight="200" prefWidth="500">
+        <columns>
+            <TableColumn text="Ejercicio" fx:id="colEjercicio" prefWidth="150"/>
+            <TableColumn text="Grupo muscular" fx:id="colGrupo" prefWidth="120"/>
+            <TableColumn text="Series" fx:id="colSeries" prefWidth="80"/>
+            <TableColumn text="Repeticiones" fx:id="colRepeticiones" prefWidth="80"/>
+        </columns>
+    </TableView>
+
+    <Button text="Guardar Rutina" onAction="#guardarRutina"/>
+    <HBox alignment="CENTER_RIGHT">
+        <Button text="Volver" onAction="#volverPantallaPrincipal"/>
+    </HBox>
+
+    <Label fx:id="lblMensaje" style="-fx-text-fill: red;"/>
+</VBox>

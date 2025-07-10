@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.fitnesstracker.app.PanelUsuarioController"
+      stylesheets="@estilos.css">
+
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <Label text="Panel de Usuario" styleClass="title"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Label fx:id="lblNombre" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Peso Actual (kg):" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Label fx:id="lblPeso" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Peso Objetivo (kg):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Label fx:id="lblPesoObjetivo" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="IMC:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Label fx:id="lblImc" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Label text="Rutinas Pasadas:" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <TableView fx:id="tablaRutinas" prefHeight="250" prefWidth="600">
+        <columns>
+            <TableColumn text="Fecha" fx:id="colFecha" prefWidth="150"/>
+            <TableColumn text="Ejercicios" fx:id="colEjercicios" prefWidth="400"/>
+        </columns>
+    </TableView>
+
+    <HBox alignment="CENTER_RIGHT">
+        <Button text="Volver" onAction="#volverPantallaPrincipal"/>
+    </HBox>
+
+    <Label fx:id="lblMensaje" style="-fx-text-fill: red;"/>
+
+</VBox>

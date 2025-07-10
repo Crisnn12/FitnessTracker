@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10"
+      alignment="CENTER"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.fitnesstracker.app.RegistroUsuarioController"
+      stylesheets="@estilos.css">
+    <Label text="Registro de Usuario" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    <TextField fx:id="txtNombre" promptText="Nombre"/>
+    <TextField fx:id="txtPeso" promptText="Peso (kg)"/>
+    <TextField fx:id="txtAltura" promptText="Altura (cm)"/>
+    <TextField fx:id="txtPesoObjetivo" promptText="Peso Objetivo (kg)"/>
+    <Button text="Registrar" onAction="#registrarUsuario"/>
+    <Label fx:id="lblMensaje" style="-fx-text-fill: red;"/>
+</VBox>

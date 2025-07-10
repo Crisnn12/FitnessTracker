@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.fitnesstracker.app.PantallaPrincipalController"
+           stylesheets="@estilos.css">
+
+    <VBox spacing="30" alignment="CENTER">
+
+        <Label fx:id="lblSaludo" text="Hola" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+        <VBox spacing="15" alignment="CENTER">
+            <Button text="Crear rutina" onAction="#handleVerRutina" prefWidth="220"/>
+            <Button text="Ver historial" onAction="#handleVerUsuario" prefWidth="220"/>
+            <Button text="Calculadora IMC" onAction="#irACalculadoraIMC" prefWidth="220"/>
+            <Button text="Recetario" onAction="#irARecetario" prefWidth="220"/>
+        </VBox>
+    </VBox>
+</StackPane>
